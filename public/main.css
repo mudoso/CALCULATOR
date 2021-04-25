@@ -1,0 +1,227 @@
+@import 'https://fonts.googleapis.com/css?family=Share+Tech+Mono';
+@import 'https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap';
+
+:root {
+    --rad: 3px;
+    --dark: #282c34;
+    --calculator: #f3f7ff;
+    --calShadow: #c4c8cf;
+    --display: #879995;
+    --displayText: #425a55;
+    --white: #ffffff;
+    --primary: #9a9ba7;
+    --primShadow: #7e7f8a;
+    --secondary: #e5726d;
+    --secShadow: #c3625e;
+    --tertiary: #6eaadc;
+    --terShadow: #5a8cb5;
+    --fourth: #7f7ca1;
+    --fourShadow: #676392;
+
+    --font-primary: BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    --font-display: 'Press Start 2P', cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    margin-block-start: 0;
+
+    align-items: center;
+    justify-content: center;
+    list-style-position: inside;
+
+    /* font-size: 15px; */
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: .15rem;
+}
+
+body, html, #root {
+    font-family: var(--font-primary);
+    /* height: 100vh;
+    width: 100vw; */
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+#root{
+    color: var(--white);
+    text-align: center;
+}
+
+body {
+    background-color: var(--dark);
+}
+
+h1 {
+    padding: 3rem;  
+}
+
+#calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 4rem);
+    grid-template-rows: repeat(6, 4rem);
+
+    grid-template-areas:
+    "DIS DIS DIS DIS"
+    "CLE CLE DIV MUL"
+    "ONE TWO THR SUB"
+    "FOU FIV SIX ADD"
+    "SEV EIG NIN EQU"
+    "ZER ZER DEC EQU"
+    ;
+
+    gap: .7rem;
+    margin: 5vh auto;
+    padding: 2rem;
+    width: 22rem;
+    place-items: center;
+    border-radius: var(--rad);
+    background-color: var(--calculator);
+    box-shadow: 0px 10px 0px 0px var(--calShadow);
+}
+
+#display {
+    grid-area: DIS;
+
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 0.5rem;
+    transition: 200ms;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    overflow: hidden;
+    background: var(--display);
+    color: var(--displayText);
+
+    font-size: 0.8rem;
+    letter-spacing: 0rem;
+    font-family: var(--font-display);
+    border-radius: var(--rad);
+    cursor: pointer;
+    border: 0;
+    box-shadow: 0px -5px 0px 0px var(--calShadow);
+}
+.formula, .result {
+    padding: 0.2rem 0;
+}
+.result {
+    font-size: 1.5rem;
+}
+#clear{
+    grid-area: CLE;
+}
+#equals{
+    grid-area: EQU;
+}
+#add{
+    grid-area: ADD;
+}
+#subtract{
+    grid-area: SUB;
+}
+#multiply{
+    grid-area: MUL;
+}
+#divide{
+    grid-area: DIV;
+}
+#decimal{
+    grid-area: DEC;
+}
+#one {
+    grid-area: ONE;
+}
+#two {
+    grid-area: TWO;
+}
+#three {
+    grid-area: THR;
+}
+#four {
+    grid-area: FOU;
+}
+#five {
+    grid-area: FIV;
+}
+#six {
+    grid-area: SIX;
+}
+#seven {
+    grid-area: SEV;
+}
+#eight {
+    grid-area: EIG;
+}
+#nine {
+    grid-area: NIN;
+}
+#zero {
+    grid-area: ZER;
+}
+#decimal {
+    grid-area: DEC;
+}
+
+
+button {
+    width: 100%;
+    height: 100%;
+
+    padding: 0.5rem 0.5rem;
+    transition: 200ms;
+
+    background: var(--primary);
+    color: var(--white);
+
+    font-size: 2rem;
+    border-radius: var(--rad);
+    cursor: pointer;
+    border: 0;
+    box-shadow: 0px 5px 0px 0px var(--primShadow);
+}
+button:active, .active {
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px 0px var(--primShadow);
+}
+button:active, .active {
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px 0px var(--primShadow);
+}
+
+.btn-secondary {
+    background: var(--secondary);
+    box-shadow: 0px 5px 0px 0px var(--secShadow);
+}
+#btn-secondary:active{
+    box-shadow: 0px 0px 0px 0px var(--secShadow);
+}
+.btn-tertiary {
+    background: var(--tertiary);
+    box-shadow: 0px 5px 0px 0px var(--terShadow);
+}
+#btn-tertiary:active{
+    box-shadow: 0px 0px 0px 0px var(--terShadow);
+}
+.btn-fourth {
+    background: var(--fourth);
+    box-shadow: 0px 5px 0px 0px var(--fourShadow);
+}
+#btn-fourth:active{
+    box-shadow: 0px 0px 0px 0px var(--fourShadow);
+}
+
+    
+p {
+    padding: 0.5rem 0;
+}
+
+
